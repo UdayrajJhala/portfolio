@@ -59,7 +59,7 @@ const About = () => {
           About Me
         </motion.h2>
         <div className="text-center mb-8">
-          <p className="text-xl leading-relaxed mx-auto max-w-4xl">
+          <p className="text-xl leading-relaxed mx-auto max-w-4xl ">
             A pre-final year BTech CSE student and a passionate full-stack
             developer with experience in building web applications using modern
             technologies like React, Node.js, Express.js, SQL, and more.
