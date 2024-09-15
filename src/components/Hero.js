@@ -1,8 +1,46 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-scroll";
 import art from "../assets/art.png";
 
 const Hero = () => {
+  const [transformStyle, setTransformStyle] = useState({});
+  const imgRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    const img = imgRef.current;
+    if (!img) return;
+
+    const rect = img.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    // Increase rotation values for a more pronounced effect
+    const rotateX = ((mouseY - centerY) / centerY) * -15; // Adjust for more tilt, negative to invert direction
+    const rotateY = ((mouseX - centerX) / centerX) * 15; // Adjust for more tilt, positive for natural rotation
+
+    setTransformStyle({
+      transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.1)`,
+      transition: "transform 0.1s ease-out",
+    });
+  };
+
+  const handleMouseEnter = () => {
+    setTransformStyle((prev) => ({
+      ...prev,
+      transform: `${prev.transform || ""} scale(1.1)`, // Enlarge the image
+      transition: "transform 0.3s ease-out", // Smooth transition
+    }));
+  };
+
+  const handleMouseLeave = () => {
+    setTransformStyle({
+      transform: "rotateX(0deg) rotateY(0deg) scale(1)", // Reset to normal size and rotation
+      transition: "transform 0.5s ease-out", // Smooth transition back to normal
+    });
+  };
+
   return (
     <section
       id="home"
@@ -24,6 +62,11 @@ const Hero = () => {
         src={art}
         className="w-auto max-w-2xl min-w-0 hidden md:flex"
         alt="Art"
+        style={transformStyle}
+        onMouseMove={handleMouseMove}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        ref={imgRef}
       />
     </section>
   );

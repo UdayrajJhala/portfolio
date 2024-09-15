@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const Experience = () => (
-  <div className="text-white bg-gray-800 p-6 rounded-lg xl:max-w-lg w-auto lg:max-w-md max-w-sm">
+  <div className="text-white bg-gray-800 p-6 rounded-lg w-full max-w-3xl md:max-w-md xl:max-w-lg">
     <h3 className="text-4xl font-semibold mb-4">Experience</h3>
     <ul className="list-disc pl-5 space-y-4">
       <li>
@@ -12,7 +12,6 @@ const Experience = () => (
             June 2024 - August 2024
           </div>
         </div>
-
         <ul className="list-disc pl-5 mt-4">
           <li className="text-white">
             Reviewed and maintained project documentation and conducted thorough
@@ -31,7 +30,7 @@ const Experience = () => (
 );
 
 const Education = () => (
-  <div className="text-white bg-gray-800 p-6 rounded-lg max-w-lg w-auto">
+  <div className="text-white bg-gray-800 p-6 rounded-lg w-full max-w-3xl md:max-w-md xl:max-w-lg">
     <h3 className="text-4xl font-semibold mb-4">Education</h3>
     <ul className="list-disc pl-5 space-y-4">
       <li>
@@ -66,7 +65,7 @@ const About = () => {
             technologies like React, Node.js, Express.js, SQL, and more.
           </p>
         </div>
-        <div className="flex flex-col md:flex-row justify-around space-y-8 md:space-y-0">
+        <div className="flex flex-col md:flex-row justify-around space-y-8 md:space-y-0 md:space-x-8">
           <div className="flex justify-center w-full">
             <Education />
           </div>
