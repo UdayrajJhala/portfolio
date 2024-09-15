@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+/* Add this CSS to your global styles or a CSS module */
+.list-with-dots {
+  list-style-type: none; /* Remove default list bullets */
+  position: relative; /* Positioning context for the dots */
+  padding-left: 1.5rem; /* Adjust padding to make space for the dots */
+}
+
+.list-with-dots li {
+  position: relative; /* Positioning context for the dots */
+  padding-left: 2rem; /* Space for the dot and line */
+  margin-bottom: 1rem; /* Space between list items */
+}
+
+.list-with-dots li::before {
+  content: ''; /* Empty content for the dot */
+  position: absolute;
+  left: 0; /* Align dot to the left */
+  top: 0.5rem; /* Center dot vertically */
+  width: 0.5rem; /* Dot width */
+  height: 0.5rem; /* Dot height */
+  background-color: white; /* Dot color */
+  border-radius: 50%; /* Make the dot round */
+}
+
+.list-with-dots li::after {
+  content: ''; /* Empty content for the line */
+  position: absolute;
+  left: 0.25rem; /* Position line to the right of the dot */
+  top: 0.75rem; /* Align line with dot center */
+  width: 0.1rem; /* Line width */
+  height: calc(100% - 0.75rem); /* Line height */
+  background-color: white; /* Line color */
+}
