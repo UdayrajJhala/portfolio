@@ -13,6 +13,7 @@ import {
   FaLinux,
 } from "react-icons/fa";
 import {
+  SiRender,
   SiCplusplus,
   SiFlask,
   SiExpress,
@@ -58,6 +59,7 @@ const Skills = () => {
           { Icon: SiPostman, label: "Postman" },
           { Icon: SiVercel, label: "Vercel" },
           { Icon: SiMicrosoftazure, label: "Azure" },
+          { Icon: SiRender, label: "Render"},
         ].map(({ Icon, label, color }, index) => (
           <div
             key={index}

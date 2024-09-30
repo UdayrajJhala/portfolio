@@ -1,6 +1,17 @@
 import React from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./custom-toast.css"; 
 
 const projects = [
+  {
+    title: "QuickChat",
+    description:
+      "A web based real-time chat application with that allows users to create or join chat rooms and send or receive encrypted messages.",
+    techStack: "Node.js, Express.js, React, Socket.IO",
+    liveLink: "https://quickkchat.vercel.app",
+    githubLink: "https://github.com/UdayrajJhala/YoutubeSummarizer",
+  },
   {
     title: "Inventory Management Web App",
     description:
@@ -15,16 +26,9 @@ const projects = [
       "A robust video editing web application with features like trimming, merging, adding filters, and dubbing videos into different languages.",
     techStack: "React, FFmpeg wasm, Django",
     liveLink: "#",
-    githubLink: "https://github.com/UdayrajJhala/ChatApp",
+    githubLink: "https://github.com/UdayrajJhala/QuickChat",
   },
-  {
-    title: "Real-time Chat App",
-    description:
-      "A socket-based real-time chat application that allows users to send and receive AES encrypted messages.",
-    techStack: "Node.js, Express.js, React, Socket.IO",
-    liveLink: "#",
-    githubLink: "https://github.com/UdayrajJhala/YoutubeSummarizer",
-  },
+
   {
     title: "YouTube Summarizer",
     description:
@@ -36,6 +40,16 @@ const projects = [
 ];
 
 const Projects = () => {
+  const handleLiveClick = (liveLink) => {
+    if (liveLink === "#") {
+      toast.info("Project is not live yet!", {
+        className: "custom-toast",
+      });
+    } else {
+      window.open(liveLink, "_blank");
+    }
+  };
+
   return (
     <section id="projects" className="text-white bg-gray-900 py-16">
       <div className="container mx-auto">
@@ -49,18 +63,14 @@ const Projects = () => {
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
                 <p className="text-gray-300 mb-4">{project.description}</p>
-                <p className="text-gray-400 mb-4">
-                  {project.techStack}
-                </p>
+                <p className="text-gray-400 mb-4">{project.techStack}</p>
                 <div className="flex space-x-4">
-                 {/* <a
-                    href={project.liveLink}
+                  <button
+                    onClick={() => handleLiveClick(project.liveLink)}
                     className="bg-gray-900 text-white px-4 py-2 rounded-lg inline-block transform transition-transform duration-300 hover:translate-y-[-4px] hover:scale-105"
-                    target="_blank"
-                    rel="noopener noreferrer"
                   >
                     Live
-                  </a> */}
+                  </button>
                   <a
                     href={project.githubLink}
                     className="bg-gray-900 text-white px-4 py-2 rounded-lg inline-block transform transition-transform duration-300 hover:translate-y-[-4px] hover:scale-105"
@@ -75,6 +85,7 @@ const Projects = () => {
           ))}
         </div>
       </div>
+      <ToastContainer />
     </section>
   );
 };
