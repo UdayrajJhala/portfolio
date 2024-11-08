@@ -1,7 +1,10 @@
 import React from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import "./custom-toast.css"; 
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+
+import quickChatImage from "../assets/quickchat.png";
+import inventoryImage from "../assets/inventory.png";
+import clipKadabraImage from "../assets/clipkadabra.png";
+import stockimage from "../assets/stock.png";
 
 const projects = [
   {
@@ -10,7 +13,8 @@ const projects = [
       "A web based real-time chat application with that allows users to create or join chat rooms and send or receive encrypted messages.",
     techStack: "Node.js, Express.js, React, Socket.IO",
     liveLink: "https://quickkchat.vercel.app",
-    githubLink: "https://github.com/UdayrajJhala/YoutubeSummarizer",
+    githubLink: "https://github.com/UdayrajJhala/QuickChat",
+    src: quickChatImage,
   },
   {
     title: "Inventory Management Web App",
@@ -19,6 +23,7 @@ const projects = [
     techStack: "Node.js, Express.js, React, PostgreSQL",
     liveLink: "#",
     githubLink: "https://github.com/UdayrajJhala/Inventory-Management",
+    src: inventoryImage,
   },
   {
     title: "Clip Kadabra",
@@ -27,65 +32,88 @@ const projects = [
     techStack: "React, FFmpeg wasm, Django",
     liveLink: "#",
     githubLink: "https://github.com/UdayrajJhala/QuickChat",
+    src: clipKadabraImage,
   },
 
   {
-    title: "YouTube Summarizer",
+    title: "Stock Portfolio Management System",
     description:
-      "A web application that generates summaries of YouTube videos, taking the video links as input.",
-    techStack: "Flask, React",
+      "A desktop application that enables users to buy, sell stocks and view their Portfolio.",
+    techStack: "Java, MySQL",
     liveLink: "#",
-    githubLink: "https://github.com/UdayrajJhala/ClipKadabra",
+    githubLink:
+      "https://github.com/UdayrajJhala/Stock-Portfolio-Management-System",
+      src:stockimage
   },
 ];
 
-const Projects = () => {
-  const handleLiveClick = (liveLink) => {
-    if (liveLink === "#") {
-      toast.info("Project is not live yet!", {
-        className: "custom-toast",
-      });
-    } else {
-      window.open(liveLink, "_blank");
-    }
-  };
 
-  return (
-    <section id="projects" className="text-white bg-gray-900 py-16">
-      <div className="container mx-auto">
-        <h2 className="text-5xl font-bold text-center mb-14">Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <div
+const ProjectCard = ({ project }) => (
+  <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105">
+    <div className="p-4 flex flex-col h-full">
+      <h3 className="text-2xl font-bold mb-3 text-indigo-300">
+        {project.title}
+      </h3>
+    
+        <img
+          className="rounded-lg max-w-xl"
+          src={project.src}
+          alt={project.title}
+        />
+    
+
+      <p className="text-gray-300 mb-4 flex-grow mt-2">{project.description}</p>
+      <div className="mb-4">
+        <div className="flex flex-wrap gap-2">
+          {project.techStack.split(", ").map((tech, index) => (
+            <span
               key={index}
-              className="bg-gray-800 border border-transparent rounded-lg overflow-hidden transform transition-transform duration-300 hover:bg-gray-700 hover:scale-105"
+              className="bg-gray-700 text-indigo-300 px-2 py-1 rounded-full text-xs"
             >
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-300 mb-4">{project.description}</p>
-                <p className="text-gray-400 mb-4">{project.techStack}</p>
-                <div className="flex space-x-4">
-                  <button
-                    onClick={() => handleLiveClick(project.liveLink)}
-                    className="bg-gray-900 text-white px-4 py-2 rounded-lg inline-block transform transition-transform duration-300 hover:translate-y-[-4px] hover:scale-105"
-                  >
-                    Live
-                  </button>
-                  <a
-                    href={project.githubLink}
-                    className="bg-gray-900 text-white px-4 py-2 rounded-lg inline-block transform transition-transform duration-300 hover:translate-y-[-4px] hover:scale-105"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    GitHub
-                  </a>
-                </div>
-              </div>
-            </div>
+              {tech}
+            </span>
           ))}
         </div>
       </div>
-      <ToastContainer />
+      <div className="flex space-x-4">
+        {project.liveLink !== "#" && (
+          <a
+            href={project.liveLink}
+            className="flex items-center justify-center bg-indigo-600 text-white px-4 py-2 rounded-lg transition-all duration-300 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaExternalLinkAlt className="mr-2" />
+            Live
+          </a>
+        )}
+        <a
+          href={project.githubLink}
+          className="flex items-center justify-center bg-gray-700 text-white px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaGithub className="mr-2" />
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+);
+
+const Projects = () => {
+  return (
+    <section id="projects" className="text-white bg-gray-900 py-20">
+      <div className="container mx-auto px-4">
+        <h2 className="text-5xl font-bold text-center mb-14 text-indigo-400">
+          Projects
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <ProjectCard key={index} project={project} />
+          ))}
+        </div>
+      </div>
     </section>
   );
 };

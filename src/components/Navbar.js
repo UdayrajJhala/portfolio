@@ -1,67 +1,105 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import { FaBars, FaTimes, FaGithub } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const navItems = ["Home", "Skills", "Projects", "About", "Contact"];
+
   return (
-    <nav className="fixed top-0 w-full bg-gray-900 text-white z-50">
-      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <div className="flex items-center space-x-12">
-          <h1 className="text-2xl font-bold">Portfolio</h1>
-          <a
-            href="https://github.com/UdayrajJhala"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-3xl hover:text-gray-300"
-          >
-            <FaGithub />
-          </a>
-        </div>
+    <nav
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-gray-900/95 backdrop-blur-sm shadow-lg"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <motion.h1
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-2xl font-bold bg-indigo-400 text-transparent bg-clip-text"
+        >
+          Portfolio.
+        </motion.h1>
         <div className="lg:hidden">
-          <button onClick={toggleMenu} className="text-2xl focus:outline-none">
+          <button
+            onClick={toggleMenu}
+            className="text-2xl focus:outline-none text-white hover:text-gray-300 transition-colors"
+          >
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
-        <div className="hidden lg:flex space-x-6 font-bold">
-          {["Home", "Skills", "Projects", "About", "Contact"].map(
-            (item, index) => (
-              <Link
-                key={index}
-                to={item.toLowerCase()}
-                smooth={true}
-                duration={500}
-                className="text-xl py-2 px-4 cursor-pointer hover:text-gray-300"
-              >
-                {item}
-              </Link>
-            )
-          )}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="hidden lg:flex space-x-2"
+        >
+          {navItems.map((item, index) => (
+            <Link
+              key={index}
+              to={item.toLowerCase()}
+              smooth={true}
+              duration={500}
+              spy={true}
+              className="relative overflow-hidden group px-4 py-2 rounded-full transition-all duration-300 font-bold text-white hover:text-white cursor-pointer text-xl"
+            >
+              <span className="relative z-10">{item}</span>
+              <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </Link>
+          ))}
+        </motion.div>
       </div>
-      {isOpen && (
-        <div className="lg:hidden flex flex-col items-center bg-gray-900 py-4">
-          {["Home", "Skills", "Projects", "About", "Contact"].map(
-            (item, index) => (
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="lg:hidden flex flex-col items-center bg-gray-900/95 backdrop-blur-sm py-4"
+          >
+            {navItems.map((item, index) => (
               <Link
                 key={index}
                 to={item.toLowerCase()}
                 smooth={true}
                 duration={500}
+                spy={true}
                 onClick={() => setIsOpen(false)}
-                className="text-xl py-2 cursor-pointer hover:text-gray-300"
+                className="text-white hover:text-white w-full text-center transition-all duration-300 py-2 px-4 hover:bg-gradient-to-r from-blue-500 to-purple-600 cursor-pointer"
               >
                 {item}
               </Link>
-            )
-          )}
-        </div>
-      )}
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
