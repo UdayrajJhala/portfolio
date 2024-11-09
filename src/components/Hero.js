@@ -58,7 +58,7 @@ const Hero = () => {
           Udayraj Jhala
         </h1>
         <p className="mt-6 text-3xl text-indigo-100">Student | Developer</p>
-        <div className="mt-8 flex flex-col sm:flex-row gap-4">
+        <div className="mt-8 flex flex-col sm:flex-row gap-4 items-center">
           <Link
             to="projects"
             smooth={true}
@@ -75,8 +75,6 @@ const Hero = () => {
           >
             Contact Me
           </Link>
-        </div>
-        <div className="mt-6 flex gap-4">
           <a
             href="https://github.com/yourusername"
             target="_blank"
@@ -95,11 +93,12 @@ const Hero = () => {
           </a>
         </div>
       </motion.div>
+
       <motion.div
         className="tilt-box-wrap"
         style={{
           width: "100%",
-          maxWidth: "600px",
+          maxWidth: "450px",
           height: "auto",
           perspective: "1000px",
           overflow: "hidden",
@@ -109,12 +108,11 @@ const Hero = () => {
         transition={{ duration: 0.8 }}
       >
         <img
-          src={art}
+          src="https://user-images.githubusercontent.com/74038190/229223263-cf2e4b07-2615-4f87-9c38-e37600f8381a.gif"
           className="w-full max-w-xl mx-auto sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
           alt="Art"
           style={{
             ...transformStyle,
-            filter: "drop-shadow(0 0 10px rgba(255,255,255,0.3))",
           }}
           onMouseMove={handleMouseMove}
           onMouseEnter={handleMouseEnter}
