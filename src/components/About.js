@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaGraduationCap, FaBriefcase, FaCode } from "react-icons/fa";
 
 const ExperienceItem = ({ title, date, details }) => (
-  <motion.li
+  <li
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
@@ -26,18 +26,18 @@ const ExperienceItem = ({ title, date, details }) => (
       {details.map((detail, index) => (
         <li
           key={index}
-          className="text-gray-400 text-sm leading-relaxed flex items-start"
+          className="text-gray-200 text-sm leading-relaxed flex items-start"
         >
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-indigo-500/50 mt-2 mr-2 flex-shrink-0" />
           {detail}
         </li>
       ))}
     </ul>
-  </motion.li>
+  </li>
 );
 
 const SectionCard = ({ title, children, icon: Icon }) => (
-  <motion.div
+  <div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
@@ -49,17 +49,17 @@ const SectionCard = ({ title, children, icon: Icon }) => (
       <div className="p-2 bg-indigo-500/10 rounded-lg">
         <Icon className="text-2xl text-indigo-400" />
       </div>
-      <h3 className="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+      <h3 className="text-2xl font-bold bg-indigo-400 bg-clip-text text-transparent">
         {title}
       </h3>
     </div>
     {children}
-  </motion.div>
+  </div>
 );
 
 const Education = () => (
   <SectionCard title="Education" icon={FaGraduationCap}>
-    <motion.div
+    <div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
@@ -70,15 +70,15 @@ const Education = () => (
         Bachelor of Technology in Computer Science & Engineering
       </h4>
       <div className="flex flex-col space-y-2">
-        <span className="text-gray-400">
+        <span className="text-gray-200">
           Symbiosis Institute of Technology, Pune | 2022 - 2026
         </span>
         <div className="flex items-center space-x-2">
-          <span className="text-gray-400">CGPA: 8.26</span>
+          <span className="text-gray-200">CGPA: 8.26</span>
           
         </div>
       </div>
-    </motion.div>
+    </div>
   </SectionCard>
 );
 
@@ -105,7 +105,7 @@ const About = () => {
     >
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <motion.div
+          <div
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -121,13 +121,13 @@ const About = () => {
                   <FaCode className="text-3xl text-indigo-400" />
                 </div>
               </div>
-              <p className="text-lg leading-relaxed text-gray-300 max-w-3xl mx-auto">
+              <p className="text-lg leading-relaxed text-white max-w-3xl mx-auto">
                 A pre-final year BTech CSE student and a passionate full-stack
                 developer with experience in building web applications using
                 modern technologies like React, Node.js, Express.js, SQL, etc.
               </p>
             </div>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <Education />

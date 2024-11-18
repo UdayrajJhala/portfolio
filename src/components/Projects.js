@@ -49,7 +49,7 @@ const ProjectCard = ({ project, index }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <motion.div
+    <div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -72,10 +72,10 @@ const ProjectCard = ({ project, index }) => {
         </div>
 
         <div className="p-6">
-          <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+          <h3 className="text-2xl font-bold mb-3 bg-indigo-400 bg-clip-text text-transparent">
             {project.title}
           </h3>
-          <p className="text-gray-300 text-sm mb-4  transition-all duration-300">
+          <p className="text-gray-200 text-sm mb-4  transition-all duration-300">
             {project.description}
           </p>
 
@@ -121,7 +121,7 @@ const ProjectCard = ({ project, index }) => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -133,14 +133,14 @@ const Projects = () => {
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <motion.h2
+          <h2
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="text-5xl font-bold text-indigo-400 mb-4"
           >
             Projects
-          </motion.h2>
+          </h2>
       
         </div>
 

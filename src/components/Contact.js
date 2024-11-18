@@ -3,7 +3,7 @@ import { FaLinkedin, FaTwitter, FaGithub, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const ContactPlatform = ({ icon: Icon, link, label }) => (
-  <motion.a
+  <a
     href={link}
     target="_blank"
     rel="noopener noreferrer"
@@ -15,7 +15,7 @@ const ContactPlatform = ({ icon: Icon, link, label }) => (
     <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
       {label}
     </span>
-  </motion.a>
+  </a>
 );
 
 const Contact = () => {
@@ -38,17 +38,17 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-gray-900 text-white">
       <div className="container mx-auto px-4 max-w-5xl">
-        <motion.h2
+        <h2
           className="text-5xl font-bold mb-12 text-center bg-indigo-400 text-transparent bg-clip-text"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           Let's Connect
-        </motion.h2>
+        </h2>
 
         <div className="flex flex-col md:flex-row gap-12">
-          <motion.div
+          <div
             className="flex-1"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -104,9 +104,9 @@ const Contact = () => {
                 Send Message
               </button>
             </form>
-          </motion.div>
+          </div>
 
-          <motion.div
+          <div
             className="flex-1 flex flex-col justify-between"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -143,7 +143,7 @@ const Contact = () => {
                 />
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

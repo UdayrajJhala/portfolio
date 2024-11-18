@@ -143,7 +143,7 @@ const Navbar = () => {
       className={`fixed top-0 w-full z-50 transition-all duration-300 bg-gray-900`}
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <motion.div
+        <div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
@@ -166,7 +166,7 @@ const Navbar = () => {
               ></span>
             </span>
           </Link>
-        </motion.div>
+        </div>
 
         <div className="lg:hidden">
           <button
@@ -178,7 +178,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        <motion.div
+        <div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -187,7 +187,7 @@ const Navbar = () => {
           {navItems.map((item) => (
             <NavButton key={item} item={item} />
           ))}
-        </motion.div>
+        </div>
       </div>
 
       <AnimatePresence>

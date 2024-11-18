@@ -8,6 +8,17 @@ const Hero = () => {
   const [transformStyle, setTransformStyle] = useState({});
   const imgRef = useRef(null);
 
+ const handleWheel = (e) => {
+   if (e.deltaY > 0) {
+     // Scroll down
+     e.currentTarget.scrollBy(0, e.deltaY);
+   } else {
+     // Scroll up
+     e.currentTarget.scrollBy(0, e.deltaY);
+     e.preventDefault(); // Prevent the image from enlarging
+   }
+ };
+
   const handleMouseMove = (e) => {
     const img = imgRef.current;
     if (!img) return;
@@ -48,7 +59,7 @@ const Hero = () => {
       id="home"
       className="min-h-screen bg-gray-900 flex flex-col-reverse lg:flex-row items-center justify-around text-white p-8 overflow-hidden"
     >
-      <motion.div
+      <div
         className="flex flex-col items-center lg:items-start justify-center w-full max-w-md text-center lg:text-left mb-8 lg:mb-0"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -92,9 +103,9 @@ const Hero = () => {
             <FaLinkedin size={24} />
           </a>
         </div>
-      </motion.div>
+      </div>
 
-      <motion.div
+      <div
         className="tilt-box-wrap"
         style={{
           width: "100%",
@@ -108,6 +119,7 @@ const Hero = () => {
         transition={{ duration: 0.8 }}
       >
         <img
+          onWheel={handleWheel}
           src="https://user-images.githubusercontent.com/74038190/229223263-cf2e4b07-2615-4f87-9c38-e37600f8381a.gif"
           className="w-full max-w-xl mx-auto sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
           alt="Art"
@@ -119,7 +131,7 @@ const Hero = () => {
           onMouseLeave={handleMouseLeave}
           ref={imgRef}
         />
-      </motion.div>
+      </div>
     </section>
   );
 };
