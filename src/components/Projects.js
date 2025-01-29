@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import clipKadabraImage from "../assets/clipkadabra.png";
-import FitMateImage from "../assets/fitmate.png";
+import FitMateImage from "../assets/Fitmate.png";
 import adwiseimage from "../assets/adwise.png"
 const projects = [
   {
