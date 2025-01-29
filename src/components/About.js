@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { FaGraduationCap, FaBriefcase, FaCode } from "react-icons/fa";
 
 const ExperienceItem = ({ title, date, details }) => (
@@ -122,7 +121,7 @@ const About = () => {
                 </div>
               </div>
               <p className="text-lg leading-relaxed text-white max-w-3xl mx-auto">
-                A pre-final year BTech CSE student and a passionate full-stack
+                A pre-final year CS major and a passionate full-stack
                 developer with experience in building web applications using
                 modern technologies like React, Node.js, Express.js, SQL, MongoDB, Django etc.
               </p>

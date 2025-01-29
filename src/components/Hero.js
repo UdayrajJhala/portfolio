@@ -1,8 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-scroll";
-import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import art from "../assets/art.png";
 
 const Hero = () => {
   const [transformStyle, setTransformStyle] = useState({});

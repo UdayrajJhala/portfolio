@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { FaLinkedin, FaTwitter, FaGithub, FaEnvelope } from "react-icons/fa";
-import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
 
 const ContactPlatform = ({ icon: Icon, link, label }) => (
