@@ -1,28 +1,26 @@
 import React, { useState } from "react";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-import { motion } from "framer-motion";
-import quickChatImage from "../assets/quickchat.png";
-import inventoryImage from "../assets/inventory.png";
 import clipKadabraImage from "../assets/clipkadabra.png";
-import stockimage from "../assets/stock.png";
+import FitMateImage from "../assets/fitmate.png";
+import adwiseimage from "../assets/adwise.png"
 const projects = [
   {
-    title: "QuickChat",
+    title: "FitMate.AI",
     description:
-      "A web based real-time chat application with that allows users to create or join chat rooms and send or receive encrypted messages.",
-    techStack: "Node.js, Express.js, React, Socket.IO",
-    liveLink: "https://quickkchat.vercel.app",
-    githubLink: "https://github.com/UdayrajJhala/QuickChat",
-    src: quickChatImage,
+      "A MERN-stack based fitness web app that generates workout and diet plans for users based on their preferences.",
+    techStack: "Node, Express, React, MongoDB, Gemini, Firebase",
+    liveLink: "https://fitmateai.vercel.app/",
+    githubLink: "https://github.com/UdayrajJhala/FitMate",
+    src: FitMateImage,
   },
   {
-    title: "Inventory Management Web App",
+    title: "AdWise.AI",
     description:
-      "A web app which enables users to view, add, update and delete items in their inventory.",
-    techStack: "Node.js, Express.js, React, PostgreSQL",
+      "An Outcome-As-A-Service platform which generates engaging video Ad and social media posts, taking a document or text as input- under 10 minutes. It enables sending the video ads to a list of customer emails and posting the ads on social media platforms like Youtube and Instagram.",
+    techStack: "React, Django, Redis, Gemini, Flux, Azure speech",
     liveLink: "#",
-    githubLink: "https://github.com/UdayrajJhala/Inventory-Management",
-    src: inventoryImage,
+    githubLink: "https://github.com/UdayrajJhala/Adwise",
+    src: adwiseimage,
   },
   {
     title: "Clip Kadabra",
@@ -32,16 +30,6 @@ const projects = [
     liveLink: "#",
     githubLink: "https://github.com/UdayrajJhala/QuickChat",
     src: clipKadabraImage,
-  },
-  {
-    title: "Stock Portfolio Management System",
-    description:
-      "A desktop application that enables users to buy, sell stocks and view their Portfolio.",
-    techStack: "Java, MySQL",
-    liveLink: "#",
-    githubLink:
-      "https://github.com/UdayrajJhala/Stock-Portfolio-Management-System",
-    src: stockimage,
   },
 ];
 

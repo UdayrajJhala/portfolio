@@ -11,8 +11,10 @@ import {
   FaGit,
   FaGithub,
   FaLinux,
+  FaFigma
 } from "react-icons/fa";
 import {
+  SiRedux,
   SiRender,
   SiCplusplus,
   SiFlask,
@@ -75,6 +77,7 @@ const Skills = () => {
         { Icon: FaNodeJs, label: "Node.js" },
         { Icon: SiExpress, label: "Express" },
         { Icon: SiFlask, label: "Flask" },
+        { Icon: SiRedux, label: "Redux" },
       ],
     },
     {
@@ -93,6 +96,7 @@ const Skills = () => {
         { Icon: VscVscode, label: "VS Code" },
         { Icon: FaLinux, label: "Linux" },
         { Icon: SiPostman, label: "Postman" },
+        { Icon: FaFigma, label: "Figma" },
       ],
     },
     {

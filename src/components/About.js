@@ -74,7 +74,7 @@ const Education = () => (
           Symbiosis Institute of Technology, Pune | 2022 - 2026
         </span>
         <div className="flex items-center space-x-2">
-          <span className="text-gray-200">CGPA: 8.26</span>
+          <span className="text-gray-200">CGPA: 8.28</span>
           
         </div>
       </div>
@@ -124,7 +124,7 @@ const About = () => {
               <p className="text-lg leading-relaxed text-white max-w-3xl mx-auto">
                 A pre-final year BTech CSE student and a passionate full-stack
                 developer with experience in building web applications using
-                modern technologies like React, Node.js, Express.js, SQL, etc.
+                modern technologies like React, Node.js, Express.js, SQL, MongoDB, Django etc.
               </p>
             </div>
           </div>

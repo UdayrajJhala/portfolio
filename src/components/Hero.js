@@ -87,7 +87,7 @@ const Hero = () => {
             Contact Me
           </Link>
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/udayrajjhala"
             target="_blank"
             rel="noopener noreferrer"
             className="text-indigo-100 hover:text-white transition-colors duration-300"
@@ -95,7 +95,7 @@ const Hero = () => {
             <FaGithub size={24} />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/udayraj27/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-indigo-100 hover:text-white transition-colors duration-300"
