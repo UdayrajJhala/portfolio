@@ -2,16 +2,18 @@ import React, { useState } from "react";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import clipKadabraImage from "../assets/clipkadabra.png";
 import FitMateImage from "../assets/fitmate.png";
-import adwiseimage from "../assets/adwise.png"
+import adwiseimage from "../assets/adwise.png";
+import Algohubimage from "../assets/algohub.png";
+
 const projects = [
   {
-    title: "FitMate.AI",
+    title: "AlgoHub",
     description:
-      "A MERN-stack based fitness web app that generates workout and diet plans for users based on their preferences.",
-    techStack: "Node, Express, React, MongoDB, Gemini, Firebase",
-    liveLink: "https://fitmateai.vercel.app/",
-    githubLink: "https://github.com/UdayrajJhala/FitMate",
-    src: FitMateImage,
+      "A platform for practicing DSA by solving problems in C++ and Java, and visualizing algorithms like sorting, DFS, BFS, and Dijkstra’s. The platform features real-time code execution via a self-hosted Judge0 instance on AWS EC2 and provides progress tracking for users.",
+    techStack: "Node, Express, PostgreSQL, React, Judge0, AWS, Docker",
+    liveLink: "https://alg0hub.vercel.app",
+    githubLink: "https://github.com/UdayrajJhala/Algohub",
+    src: Algohubimage,
   },
   {
     title: "AdWise.AI",
@@ -22,6 +24,16 @@ const projects = [
     githubLink: "https://github.com/UdayrajJhala/Adwise",
     src: adwiseimage,
   },
+  {
+    title: "FitMate.AI",
+    description:
+      "A MERN-stack based fitness web app that generates workout and diet plans for users based on their preferences.",
+    techStack: "Node, Express, React, MongoDB, Gemini, Firebase",
+    liveLink: "https://fitmateai.vercel.app/",
+    githubLink: "https://github.com/UdayrajJhala/FitMate",
+    src: FitMateImage,
+  },
+
   {
     title: "Clip Kadabra",
     description:
@@ -56,7 +68,6 @@ const ProjectCard = ({ project, index }) => {
             alt={project.title}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60" />
-         
         </div>
 
         <div className="p-6">
@@ -92,7 +103,7 @@ const ProjectCard = ({ project, index }) => {
                 rel="noopener noreferrer"
               >
                 <FaExternalLinkAlt className="mr-2 transition-transform duration-300 group-hover:rotate-12" />
-                Live 
+                Live
               </a>
             )}
             <a
@@ -115,10 +126,7 @@ const ProjectCard = ({ project, index }) => {
 
 const Projects = () => {
   return (
-    <section
-      id="projects"
-      className="min-h-screen bg-gray-900 py-20"
-    >
+    <section id="projects" className="min-h-screen bg-gray-900 py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2
@@ -129,7 +137,6 @@ const Projects = () => {
           >
             Projects
           </h2>
-      
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
