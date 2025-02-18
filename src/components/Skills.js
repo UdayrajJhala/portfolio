@@ -11,7 +11,8 @@ import {
   FaGit,
   FaGithub,
   FaLinux,
-  FaFigma
+  FaFigma,
+  FaAws,
 } from "react-icons/fa";
 import {
   SiRedux,
@@ -60,16 +61,11 @@ const Skills = () => {
         { Icon: FaCuttlefish, label: "C" },
         { Icon: FaJsSquare, label: "JavaScript" },
         { Icon: FaPython, label: "Python" },
-      ],
-    },
-    {
-      title: "Web Technologies",
-      skills: [
         { Icon: FaHtml5, label: "HTML" },
         { Icon: FaCss3Alt, label: "CSS" },
-        { Icon: SiTailwindcss, label: "Tailwind" },
       ],
     },
+
     {
       title: "Frameworks & Libraries",
       skills: [
@@ -78,6 +74,7 @@ const Skills = () => {
         { Icon: SiExpress, label: "Express" },
         { Icon: SiFlask, label: "Flask" },
         { Icon: SiRedux, label: "Redux" },
+        { Icon: SiTailwindcss, label: "Tailwind" },
       ],
     },
     {
@@ -102,18 +99,16 @@ const Skills = () => {
     {
       title: "Cloud & Deployment",
       skills: [
+        { Icon: FaAws, label: "AWS" },
+        { Icon: SiRender, label: "Render" },
         { Icon: SiVercel, label: "Vercel" },
         { Icon: SiMicrosoftazure, label: "Azure" },
-        { Icon: SiRender, label: "Render" },
       ],
     },
   ];
 
   return (
-    <section
-      id="skills"
-      className="text-white bg-gray-900 pt-20 pb-20"
-    >
+    <section id="skills" className="text-white bg-gray-900 pt-20 pb-20">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-center mb-12">
