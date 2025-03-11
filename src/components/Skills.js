@@ -18,7 +18,6 @@ import {
   SiRedux,
   SiRender,
   SiCplusplus,
-  SiFlask,
   SiExpress,
   SiTailwindcss,
   SiMysql,
@@ -27,6 +26,9 @@ import {
   SiVercel,
   SiPostman,
   SiMicrosoftazure,
+  SiSpringboot,
+  SiHibernate,
+  SiDjango,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
@@ -72,9 +74,11 @@ const Skills = () => {
         { Icon: FaReact, label: "React" },
         { Icon: FaNodeJs, label: "Node.js" },
         { Icon: SiExpress, label: "Express" },
-        { Icon: SiFlask, label: "Flask" },
+        { Icon: SiSpringboot, label: "Spring Boot" },
         { Icon: SiRedux, label: "Redux" },
         { Icon: SiTailwindcss, label: "Tailwind" },
+        { Icon: SiHibernate, label: "JPA (Hibernate)" },
+        { Icon: SiDjango, label: "Django" },
       ],
     },
     {
@@ -91,6 +95,7 @@ const Skills = () => {
         { Icon: FaGit, label: "Git" },
         { Icon: FaGithub, label: "GitHub" },
         { Icon: VscVscode, label: "VS Code" },
+        { Icon: VscVscode, label: "IntelliJ" },
         { Icon: FaLinux, label: "Linux" },
         { Icon: SiPostman, label: "Postman" },
         { Icon: FaFigma, label: "Figma" },

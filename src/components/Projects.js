@@ -4,6 +4,7 @@ import clipKadabraImage from "../assets/clipkadabra.png";
 import FitMateImage from "../assets/fitmate.png";
 import adwiseimage from "../assets/adwise.png";
 import Algohubimage from "../assets/algohub.png";
+import tesseractimage from "../assets/tesseract.png"
 
 const projects = [
   {
@@ -32,6 +33,15 @@ const projects = [
     liveLink: "https://fitmateai.vercel.app/",
     githubLink: "https://github.com/UdayrajJhala/FitMate",
     src: FitMateImage,
+  },
+  {
+    title: "Tesseract3D",
+    description:
+      "A powerful 3D design tool that enables developers and designers to create, edit, and animate 3D scenes directly in the browser and export them as React components.",
+    techStack: "React, Three.js, Node, Express",
+    liveLink: "#",
+    githubLink: "https://github.com/UdayrajJhala/Tesseract_3D",
+    src: tesseractimage,
   },
 
   {
