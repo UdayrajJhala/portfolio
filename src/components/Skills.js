@@ -29,6 +29,7 @@ import {
   SiSpringboot,
   SiHibernate,
   SiDjango,
+  SiIntellijidea,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
@@ -95,7 +96,7 @@ const Skills = () => {
         { Icon: FaGit, label: "Git" },
         { Icon: FaGithub, label: "GitHub" },
         { Icon: VscVscode, label: "VS Code" },
-        { Icon: VscVscode, label: "IntelliJ" },
+        { Icon: SiIntellijidea, label: "IntelliJ" },
         { Icon: FaLinux, label: "Linux" },
         { Icon: SiPostman, label: "Postman" },
         { Icon: FaFigma, label: "Figma" },
